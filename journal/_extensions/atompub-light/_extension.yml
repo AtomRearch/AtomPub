@@ -56,7 +56,5 @@ contributes:
       monofont: "JetBrains Mono"
       include-in-header:
         - pdf/header.tex
-      template-partials:
-        - pdf/title.tex
       pdf-engine: xelatex
       keep-tex: false
