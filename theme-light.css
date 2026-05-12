@@ -1,0 +1,224 @@
+/* AtomPub — Light Theme Override
+   Activated when <html data-theme="light"> is set.
+   Re-maps the same CSS variables defined in styles.css to a
+   warm-paper palette, so every component flips together. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Caveat:wght@400;600&display=swap');
+
+html[data-theme="light"] {
+  /* Re-map space scale to paper scale */
+  --c-space-900: #EDE9DD;
+  --c-space-800: #F1EFE8;
+  --c-space-700: #F8F7F3;   /* primary surface — warm paper */
+  --c-space-600: #F1EFE8;
+  --c-space-500: #E8E5DC;
+  --c-space-400: #DAD6CB;
+  --c-space-300: #B8B4A8;
+  --c-space-200: #8A8780;
+  --c-space-100: #5C5A52;
+  --c-space-050: #3B3A35;
+  --c-paper:     #F8F7F3;
+
+  --c-kinetic:        #2C5BA8;
+  --c-kinetic-soft:   rgba(44, 91, 168, 0.10);
+  --c-kinetic-line:   rgba(44, 91, 168, 0.40);
+
+  --c-gold:           #B8923A;
+  --c-gold-soft:      rgba(184, 146, 58, 0.14);
+  --c-gold-line:      rgba(184, 146, 58, 0.45);
+
+  --c-pos:            #5E7C4B;
+  --c-neg:            #B2543C;
+  --c-warn:           #C58A2A;
+
+  /* Semantic */
+  --bg:               #F8F7F3;
+  --bg-elev-1:        #FFFFFF;
+  --bg-elev-2:        #F1EFE8;
+  --fg:               #1F1E1B;
+  --fg-muted:         #5C5A52;
+  --fg-dim:           #8A8780;
+  --line:             #E2DED2;
+  --line-strong:      #DAD6CB;
+
+  /* Type — switch body to a warmer pairing */
+  --font-serif: "Fraunces", "Source Serif 4", Georgia, serif;
+}
+
+/* Body background swaps cleanly */
+html[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Topnav — keep glassy, but on cream */
+html[data-theme="light"] .topnav {
+  background: rgba(248, 247, 243, 0.86);
+  border-bottom-color: var(--line);
+}
+html[data-theme="light"] .nav__item { color: var(--fg-muted); }
+html[data-theme="light"] .nav__item.is-active { color: var(--fg); }
+html[data-theme="light"] .ticker-rail {
+  background: var(--bg-elev-2);
+}
+html[data-theme="light"] .nav__search {
+  background: #fff;
+}
+html[data-theme="light"] .brand__mark {
+  background: var(--c-kinetic);
+  color: #fff;
+}
+
+/* Buttons — invert primary so cream paper still has contrast */
+html[data-theme="light"] .btn {
+  background: #fff;
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .btn:hover {
+  border-color: var(--fg-muted);
+  background: var(--bg-elev-2);
+}
+html[data-theme="light"] .btn--primary {
+  background: var(--c-kinetic);
+  color: #fff;
+}
+html[data-theme="light"] .btn--ghost {
+  background: transparent;
+  border-color: transparent;
+}
+html[data-theme="light"] .btn--gold {
+  background: #fff;
+}
+
+/* Tables / panels */
+html[data-theme="light"] .panel { background: #fff; }
+html[data-theme="light"] .tbl th { background: var(--bg-elev-2); }
+html[data-theme="light"] .tbl tbody tr:hover { background: var(--bg-elev-2); }
+
+/* Hero — light + slight serif retitle */
+html[data-theme="light"] .hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+html[data-theme="light"] .hero h1 .accent {
+  color: var(--c-kinetic);
+  font-style: italic;
+  position: relative;
+}
+html[data-theme="light"] .hero h1 .accent::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -4px; height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'><path d='M2,5 Q 50,0 100,4 T 198,3' stroke='%23B8923A' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: .85;
+}
+
+/* Section titles — also serif when light */
+html[data-theme="light"] .section__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* Leadercard — switch to white card on cream */
+html[data-theme="light"] .leadercard {
+  background: #fff;
+  border-color: var(--line);
+}
+html[data-theme="light"] .leadercard__row:hover {
+  background: var(--bg-elev-2);
+}
+html[data-theme="light"] .leadercard__rank.is-1 { color: var(--c-gold); }
+
+/* Live cells — white on cream */
+html[data-theme="light"] .live__cell { background: #fff; }
+
+/* Research grid — drop heavy borders for paper feel */
+html[data-theme="light"] .research-grid {
+  border-color: var(--line);
+}
+html[data-theme="light"] .research-card {
+  border-color: var(--line);
+}
+html[data-theme="light"] .research-card__title { font-family: var(--font-serif); }
+html[data-theme="light"] .research-card:hover { background: var(--bg-elev-2); }
+
+/* Article body — light serif */
+html[data-theme="light"] .article-body { color: var(--fg); }
+html[data-theme="light"] .figure { background: #fff; border-color: var(--line); }
+html[data-theme="light"] .eq { background: var(--bg-elev-2); }
+
+/* Footer */
+html[data-theme="light"] .foot { background: var(--bg-elev-2); }
+
+/* Form fields */
+html[data-theme="light"] .field input[type=text],
+html[data-theme="light"] .field input[type=email],
+html[data-theme="light"] .field textarea,
+html[data-theme="light"] .field select {
+  background: #fff;
+}
+html[data-theme="light"] .dropzone { background: #fff; }
+
+/* KPI / dashboard chrome */
+html[data-theme="light"] .kpi { background: #fff; }
+html[data-theme="light"] .panel__head { border-bottom-color: var(--line); }
+
+/* Scrollbar */
+html[data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg-elev-2); }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: var(--line-strong); }
+
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 28px; padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.theme-toggle:hover { color: var(--fg); border-color: var(--fg-muted); }
+.theme-toggle__icon {
+  display: inline-grid; place-items: center;
+  width: 14px; height: 14px;
+}
+
+/* Soften tile colours in dashboard heatmap when light */
+html[data-theme="light"] .dot-pulse { background: var(--c-pos); }
+
+/* Tooltips on light */
+html[data-theme="light"] .tip {
+  background: #fff;
+  color: var(--fg);
+  border-color: var(--line-strong);
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+/* Article hero text on light */
+html[data-theme="light"] .article-hero p,
+html[data-theme="light"] .lede { color: var(--fg-muted); }
+
+/* Dashboard panels white on cream */
+html[data-theme="light"] .dash-grid > * { background: #fff; }
+html[data-theme="light"] .ticker-rail .tk-row { color: var(--fg-muted); }
+
+/* Hand-drawn note marker for light */
+html[data-theme="light"] .hero {
+  border-bottom-color: var(--line);
+}
+html[data-theme="light"] .hero::before {
+  /* subtle paper texture only when light */
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.018) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  opacity: .8;
+}

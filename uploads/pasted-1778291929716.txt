@@ -1,0 +1,74 @@
+Prompt for Claude Design: AtomPub Journal Infrastructure & UX Design
+Role: You are the Chief Product Officer and Lead UI/UX Designer for AtomRearch. Your mission is to design AtomPub—a next-generation, high-end energy materials journal demo that rivals the likes of Nature and Springer.
+
+Core Concept:
+AtomPub is the publishing arm of the AtomRearch ecosystem. It revolves around the MSEDsBench (Multiscale Superhigh Energy Densities Benchmark). We are not just publishing papers; we are publishing standardized, machine-readable scientific assets.
+
+Aesthetic Philosophy (The "MSEBenz" Style):
+
+Vibe: Extreme professionalism, minimalist, industrial-academic, "Stealth Wealth" aesthetic.
+
+Palette: Deep Space Gray (#1A1A1B), Kinetic Blue (#005BFF), and High-Energy Gold (#D4AF37) for critical data highlights.
+
+Typography: Masterful use of Arial or Helvetica (clean, sans-serif), prioritizing readability and information density.
+
+Phase 1: The Digital Journal Portal (Web & HTML View)
+Design a comprehensive publication workflow and its visual components:
+
+Journal Homepage:
+
+A hero section featuring the MSEDsBench global ranking.
+
+Sections for "Latest Research," "Featured Data Sprints," and "Methodology Protocols."
+
+A "Live Dashboard" widget showing real-time submission/review stats.
+
+Article Landing Page (The HTML Paper):
+
+Unlike traditional static PDFs, design a Rich HTML Article View.
+
+Interactive Sidebar: Navigation for sections (Abstract, Results, etc.), Cite button, and Data Access.
+
+In-line Data Windows: Areas where AtomSketch plots will live, including interactive tooltips.
+
+Multiscale Badge: A visual indicator showing which scale (Atom, Meso, or Macro) the research focuses on.
+
+The MSEDsBench Dashboard:
+
+A dedicated UI for the benchmark. It should look like a financial Bloomberg terminal but for energy materials.
+
+High-contrast tables and leaderboards for battery energy densities.
+
+Phase 2: Publishing System Design (UX Flow)
+Design the user journey for the following:
+
+The Submission Interface: A clean, distraction-free "Super Individual" submission portal where authors upload .qmd and raw data.
+
+Peer Review Dashboard: A streamlined view for reviewers to see data verification results (automated by AtomAgent).
+
+Phase 3: Design Deliverables (Output Requirements)
+Please provide:
+
+Global Style Guide (styles.scss): Defining CSS variables for the entire AtomPub ecosystem to ensure Quarto-rendered PDFs match the web portal.
+
+Layout Templates (Quarto / HTML):
+
+header.html & footer.html with professional branding.
+
+article-layout.css specifically for high-end academic typography.
+
+UI Mockups: Code for a Quarto-compatible navigation bar and an "Impact Factor" card.
+
+Initial Task:
+Start by generating a Comprehensive Brand Identity & Landing Page Layout for the AtomPub homepage. Focus on how to integrate MSEDsBench as the primary value proposition. Show me the HTML/Tailwind/CSS structure that defines the "look and feel" of this new era of publishing.
+
+Go!
+
+💡 给你的操作建议：
+在 Claude.ai 开启新 Project： 将其命名为 AtomPub - Publishing Ecosystem。
+
+建立连接： 如果你还没把 AtomPub 仓库连到 Project，先连上去。
+
+粘贴上述 Prompt： CD 会立刻开始生成设计规范和 HTML/CSS 代码。
+
+关于 PDF 部分： 告诉 CD：“你的 CSS 必须兼容 Quarto 的 PDF 导出逻辑，这样我用 AtomDraft 写的论文导出来的 PDF，视觉上和你的网页版是一脉相承的。”

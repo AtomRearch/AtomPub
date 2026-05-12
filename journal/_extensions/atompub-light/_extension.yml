@@ -1,0 +1,62 @@
+title: AtomPub Light
+author: AtomRearch
+version: 0.4.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    common:
+      toc: true
+      toc-depth: 3
+      toc-location: left
+      number-sections: false
+      link-citations: true
+      citations-hover: true
+      footnotes-hover: true
+      reference-location: margin
+      citation-location: margin
+      lang: en
+      fig-cap-location: bottom
+      tbl-cap-location: top
+      df-print: kable
+    html:
+      theme: [cosmo, theme.scss]
+      css: article-layout.css
+      page-layout: full
+      grid:
+        body-width: 1180px
+        sidebar-width: 0px
+        margin-width: 0px
+      template-partials:
+        - partials/title-block.html
+        - partials/toc.html
+      include-before-body:
+        - partials/before-body.html
+      include-after-body:
+        - partials/after-body.html
+      anchor-sections: true
+      smooth-scroll: true
+      code-copy: true
+      code-overflow: wrap
+      html-math-method: katex
+      mainfont: Fraunces
+      monofont: JetBrains Mono
+    pdf:
+      documentclass: scrartcl
+      papersize: a4
+      geometry:
+        - margin=1in
+        - top=1.1in
+      fontsize: 11pt
+      colorlinks: true
+      linkcolor: "atompub-accent"
+      urlcolor:  "atompub-accent"
+      citecolor: "atompub-accent"
+      mainfont: "Fraunces"
+      sansfont: "Inter"
+      monofont: "JetBrains Mono"
+      include-in-header:
+        - pdf/header.tex
+      template-partials:
+        - pdf/title.tex
+      pdf-engine: xelatex
+      keep-tex: false

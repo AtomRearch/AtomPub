@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "assets/**"
+    - "og/**"
+    - "robots.txt"
+
+website:
+  title: "AtomPub"
+  description: "Journal of Multiscale Energy Materials — Quarto-native, bench-anchored, open access."
+  site-url: "https://atomrearch.github.io/AtomPub"
+  repo-url: "https://github.com/AtomRearch/AtomPub"
+
+  # No Quarto navbar / footer — the AtomPub Light extension ships its own
+  # via before-body.html and after-body.html. Two navbars looks broken.
+  navbar: false
+
+
+  # Quarto auto-emits og:* and twitter:* meta from each page's YAML.
+  open-graph: true
+  twitter-card:
+    creator: "@atompub"
+    site: "@atompub"
+    card-style: summary_large_image
+
+format:
+  atompub-light-html: default
+
+execute:
+  freeze: auto

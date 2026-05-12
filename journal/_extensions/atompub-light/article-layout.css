@@ -1,0 +1,248 @@
+/* AtomPub Light — layout shims that go on top of theme.scss
+   Pulled out of the original light/article.css; kept as plain CSS so any
+   tweaks are immediately visible without re-running SASS. */
+
+/* === Page chrome ===
+   Header (.atp-top) and footer (.atp-foot) MUST span the full viewport;
+   only their inner content stays centered at 1180px.
+   The Quarto container should NOT constrain them. */
+html, body {
+  background: #F8F7F3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
+body > * { max-width: none; }
+
+/* Bootstrap container resets — Quarto wraps content in nested containers
+   that default to ~ 900px. We let them grow to full width so we can decide
+   where centering happens (in .atp-* inner wrappers and in main). */
+.quarto-container,
+.page-columns,
+div.quarto-layout-cell,
+#quarto-content {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+/* Article + page body content — centered, 1180px, with padding */
+main, main.content, #quarto-document-content {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 32px 28px 0 !important;
+  box-sizing: border-box !important;
+  width: 100%;
+}
+
+/* Hide Quarto's stock title block — we render our own via title-block.html */
+header#title-block-header { display: none !important; }
+
+/* Hide Quarto's stock navbar / footer / sidebars if any still render */
+nav.navbar, .quarto-secondary-nav, header#quarto-header,
+.nav-footer, footer.footer,
+#quarto-sidebar, .sidebar.sidebar-navigation,
+#quarto-margin-sidebar { display: none !important; }
+
+/* Ensure our custom header + footer fill the viewport horizontally */
+.atp-top, .atp-foot {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* Listing pages (Articles index, category lists) — center and pad */
+.quarto-listing, .quarto-listing-default,
+.listing-actions-group, .quarto-listing-cols-3 {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide Quarto's auto-injected "Categories" sidebar that was overlapping nav */
+.quarto-listing-category-title,
+.quarto-listing-category { /* leave inline category chips intact */ }
+.quarto-listing .quarto-categories-block { margin: 24px 0; }
+
+:root {
+  --atp-paper:     #F8F7F3;
+  --atp-paper-2:   #F1EFE8;
+  --atp-ink:       #1F1E1B;
+  --atp-ink-mute:  #8A8780;
+  --atp-rule:      #DAD6CB;
+  --atp-accent:    #2C5BA8;
+  --atp-gold:      #B8923A;
+}
+
+/* === AtomPub topbar === */
+.atp-top {
+  position: sticky; top: 0; z-index: 1030;
+  background: rgba(248,247,243,.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E8E5DC;
+}
+.atp-top__inner {
+  max-width: 1180px; margin: 0 auto;
+  padding: 14px 28px;
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 28px;
+}
+.atp-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: "Inter", sans-serif; font-weight: 600;
+  letter-spacing: -.005em;
+  color: var(--atp-ink);
+  text-decoration: none !important;
+}
+.atp-brand:hover { color: var(--atp-ink); }
+.atp-brand__mark {
+  width: 26px; height: 26px;
+  border: 1.5px solid var(--atp-ink);
+  display: inline-grid; place-items: center;
+  background: var(--atp-paper);
+  transform: rotate(-2deg);
+}
+.atp-brand__journal {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--atp-ink-mute);
+  letter-spacing: .12em; text-transform: uppercase;
+  border-left: 1px solid var(--atp-rule);
+  padding-left: 12px; margin-left: 4px;
+  font-weight: 400;
+}
+.atp-nav {
+  display: flex; gap: 4px; justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+.atp-nav a {
+  color: #5C5A52; text-decoration: none;
+  font-size: 14px; padding: 6px 12px; border-radius: 4px;
+}
+.atp-nav a:hover { background: var(--atp-paper-2); color: var(--atp-ink); }
+.atp-nav a.is-active { color: var(--atp-ink); position: relative; }
+.atp-nav a.is-active::after {
+  content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px;
+  background: var(--atp-accent);
+  transform: skewX(-12deg);
+}
+.atp-top__cta { display: flex; gap: 8px; }
+
+.atp-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 34px; padding: 0 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px; font-weight: 500;
+  background: var(--atp-paper);
+  border: 1px solid #3B3A35;
+  border-radius: 999px;
+  color: var(--atp-ink);
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all .15s ease;
+}
+.atp-btn:hover { background: var(--atp-ink); color: var(--atp-paper); }
+.atp-btn--accent {
+  background: var(--atp-ink);
+  color: var(--atp-paper);
+  border-color: var(--atp-ink);
+}
+.atp-btn--accent:hover { background: var(--atp-accent); border-color: var(--atp-accent); color: #fff; }
+.atp-btn--sm { height: 28px; font-size: 12px; padding: 0 10px; }
+
+/* === Title block (rendered by partials/title-block.html) === */
+.atp-mast {
+  max-width: 1180px; margin: 0 auto;
+  padding: 56px 28px 24px;
+  position: relative; z-index: 2;
+}
+.atp-mast__eyebrow {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--atp-ink-mute); letter-spacing: .08em;
+  margin-bottom: 18px;
+}
+.atp-mast__eyebrow .pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid #3B3A35;
+  border-radius: 999px;
+  background: var(--atp-paper);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 10.5px;
+}
+.atp-actions {
+  display: flex; gap: 8px; margin: 16px 0 12px; flex-wrap: wrap;
+}
+.atp-byline {
+  display: flex; flex-wrap: wrap; gap: 8px 28px;
+  align-items: center;
+  padding: 18px 0;
+  border-top: 1px solid var(--atp-rule);
+  border-bottom: 1px solid var(--atp-rule);
+  margin: 28px 0 8px;
+  font-family: "Inter", sans-serif;
+}
+.atp-byline__author {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px;
+}
+.atp-byline__avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #E8E5DC;
+  border: 1px solid var(--atp-rule);
+  display: inline-grid; place-items: center;
+  font-family: "Fraunces", serif; font-size: 13px; font-weight: 500;
+  color: #3B3A35;
+}
+.atp-byline__name { font-weight: 500; color: var(--atp-ink); }
+.atp-byline__org { color: var(--atp-ink-mute); font-size: 12.5px; }
+.atp-byline__date {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--atp-ink-mute);
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+.atp-byline__date span strong { color: #3B3A35; font-weight: 500; }
+
+/* === Footer === */
+.atp-foot {
+  border-top: 1px solid var(--atp-rule);
+  margin-top: 80px;
+  padding: 40px 28px 30px;
+  background: var(--atp-paper-2);
+  position: relative; z-index: 2;
+}
+.atp-foot__inner {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 36px;
+  font-family: "Inter", sans-serif; font-size: 13.5px;
+}
+.atp-foot h5 {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--atp-ink-mute);
+  margin: 0 0 12px;
+}
+.atp-foot a { color: #5C5A52; text-decoration: none; }
+.atp-foot a:hover { color: var(--atp-ink); }
+.atp-foot ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.atp-foot__legal {
+  max-width: 1180px; margin: 24px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--atp-rule);
+  display: flex; justify-content: space-between;
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--atp-ink-mute);
+  letter-spacing: .06em;
+}
+
+@media (max-width: 800px) {
+  .atp-top__inner { grid-template-columns: 1fr auto; }
+  .atp-nav { display: none; }
+  .atp-foot__inner { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,96 @@
+---
+title: "Your Article Title — *In Italics for Emphasis*"
+subtitle: "A one-sentence lede that survives social-media crops."
+description: "≤200 chars · the og:description that appears under the link card."
+date: 2026-05-12
+submitted: 2026-04-18
+accepted:  2026-04-26
+reading-time: "8 min"
+category-label: "Thoughts · Op-Ed"
+categories: [autonomous-research, ai, taste]
+doi: "10.55881/atp-2026-XXXX"
+canonical-url: "https://atompub.example/articles/your-slug.html"
+
+author:
+  - name: Your Name
+    initials: YN
+    affiliation: Your Lab · Your University
+    email: you@example.com
+    orcid: 0000-0000-0000-0000
+
+twitter-creator: "@your_handle"
+twitter-site: "@atompub"
+journal-name: "AtomPub · Journal of Multiscale Energy Materials"
+
+og-image: "/og/your-slug.png"
+og-image-alt: "Graphical abstract — single focal point at safe-area center."
+pdf-url: "/articles/your-slug.pdf"
+qmd-source: "https://github.com/AtomRearch/AtomPub/blob/main/journal/articles/your-slug.qmd"
+
+# Optional — uncomment if you ship a BibTeX file alongside this .qmd:
+# bibliography: references.bib
+# csl: https://www.zotero.org/styles/nature
+
+format:
+  atompub-light-html: default
+  atompub-light-pdf:  default
+---
+
+We are entering a new era. The hardest question I ask myself, and one I cannot
+reliably answer, is the one this essay is named after: when an autonomous
+research *ecosystem* can convert a single intent into thousands of executed
+experiments — what remains of the human element?
+
+## The vanishing moat {#sec-moat}
+
+For a generation, the moat of a working scientist was a stack of small, learned
+advantages — a feel for which solvent to try first, a familiarity with the
+quirks of a given instrument. None of these were glamorous.
+All of them were, until very recently, genuinely *scarce*. Scarcity is what
+makes a moat a moat.
+
+> The moat is not gone. It is evaporating — slowly enough that we can still
+> pretend, fast enough that the pretending is starting to feel theatrical.
+
+::: {.callout-note}
+**The asymmetry of compute.** When the marginal cost of running an experiment
+goes to zero, the marginal value of *choosing which experiments to run* goes up.
+Compute commoditization is taste-amplifying, not taste-replacing.
+:::
+
+## What remains, then? {#sec-remains}
+
+The honest answer is a small set of things, but a very important set:
+[choice of question]{.hl}, [choice of dataset]{.hl},
+[choice of what counts as a good answer]{.hl}.
+
+$$
+\text{value(researcher)} \approx \frac{\partial \text{(question quality)}}{\partial \text{(unit of compute)}}
+$$ {#eq-value}
+
+Eq. [-@eq-value] is a cute way of saying: as compute becomes free, the
+researcher's contribution is increasingly the *taste* embedded in the gradient
+itself — the angle of attack, not the magnitude.
+
+![Graphical abstract — a 1200×630 social-card-ready figure with a single focal point at safe-area center. Hand-drawn arrow signals conceptual content; the title strip stays legible at thumbnail scale.](../assets/og/your-slug.png){#fig-abstract fig-alt="Graphical abstract of The Evaporating Moat" width=100%}
+
+::: {.callout-warning}
+**An honest warning.** If your career consists almost entirely of producing the
+artisanal artefacts that an autonomous ecosystem can now produce at zero cost
+— and if you have not been investing in upstream taste — the next five years
+will be uncomfortable.
+:::
+
+## How this template works {#sec-template}
+
+Everything you see — the masthead, the eyebrow chips, the action buttons,
+the byline, the right-side TOC, the footer, and the full OG/Twitter/`citation_*`
+metadata block in `<head>` — is generated automatically from the YAML
+front-matter above. Edit the front-matter, write your prose, and run:
+
+```bash
+quarto render your-slug.qmd
+```
+
+You get a static HTML page and a typeset PDF that share the same visual
+lineage. Both go straight into the journal site.

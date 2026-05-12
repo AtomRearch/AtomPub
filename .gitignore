@@ -1,0 +1,6 @@
+_site/
+_freeze/
+.quarto/
+.DS_Store
+node_modules/
+*.log

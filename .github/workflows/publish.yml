@@ -1,0 +1,62 @@
+name: Publish AtomPub
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install TinyTeX (for PDF render)
+        uses: r-lib/actions/setup-tinytex@v2
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+
+      - name: Render the journal (HTML + PDF)
+        working-directory: journal
+        run: quarto render
+
+      - name: Copy the React prototype into the site
+        run: |
+          mkdir -p journal/_site
+          cp AtomPub.html journal/_site/AtomPub.html
+          cp styles.css   journal/_site/styles.css
+          cp theme-light.css journal/_site/theme-light.css
+          cp data.js      journal/_site/data.js
+          cp atoms.jsx    journal/_site/atoms.jsx
+          cp home.jsx     journal/_site/home.jsx
+          cp dashboard.jsx journal/_site/dashboard.jsx
+          cp article.jsx  journal/_site/article.jsx
+          cp flow.jsx     journal/_site/flow.jsx
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: journal/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

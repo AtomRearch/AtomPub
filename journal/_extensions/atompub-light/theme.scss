@@ -1,0 +1,269 @@
+/*-- scss:defaults --*/
+// AtomPub Light — Quarto theme defaults
+// Drop-in SASS variables that Bootstrap + Quarto pick up.
+
+$paper:        #F8F7F3 !default;
+$paper-2:      #F1EFE8 !default;
+$paper-3:      #E8E5DC !default;
+$ink:          #1F1E1B !default;
+$ink-2:        #3B3A35 !default;
+$ink-3:        #5C5A52 !default;
+$ink-mute:     #8A8780 !default;
+$rule:         #DAD6CB !default;
+$rule-soft:    #E8E5DC !default;
+$accent:       #2C5BA8 !default;
+$gold:         #B8923A !default;
+$leaf:         #5E7C4B !default;
+$rust:         #B2543C !default;
+
+// Bootstrap remaps
+$body-bg:           $paper;
+$body-color:        $ink;
+$primary:           $accent;
+$secondary:         $gold;
+$link-color:        $accent;
+$link-decoration:   underline;
+$border-color:      $rule;
+
+$font-family-sans-serif: "Inter", "Helvetica Neue", Arial, sans-serif;
+$font-family-serif:      "Fraunces", "Source Serif 4", Georgia, serif;
+$font-family-monospace:  "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+$font-family-base:       $font-family-serif;
+
+$headings-font-family:   $font-family-serif;
+$headings-font-weight:   500;
+$headings-color:         $ink;
+
+$font-size-base:         1.0625rem; // ~17px
+$line-height-base:       1.62;
+
+// Code blocks
+$code-color:             $accent;
+$code-bg:                $paper-2;
+$pre-bg:                 $paper-2;
+$pre-color:              $ink-2;
+
+// TOC
+$toc-color:              $ink-3;
+$toc-active-border:      $accent;
+
+/*-- scss:rules --*/
+// Hand-drawn-leaning details layered on top of bootstrap defaults.
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body {
+  font-feature-settings: "ss01", "onum", "liga";
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(1200px 600px at 80% -200px, rgba(184,146,58,0.06), transparent 60%),
+    radial-gradient(900px 500px at -100px 800px, rgba(44,91,168,0.04), transparent 60%),
+    #{$paper};
+  position: relative;
+}
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.012) 1px, transparent 1px);
+  background-size: 3px 3px;
+  z-index: 1;
+  opacity: .6;
+}
+
+main, .content { position: relative; z-index: 2; }
+
+h1.title {
+  font-family: $font-family-serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5.4vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144;
+  margin: 8px 0 16px;
+}
+h1.title em {
+  font-style: italic;
+  color: $accent;
+  position: relative;
+}
+h1.title em::after {
+  content: "";
+  position: absolute;
+  left: -2px; right: -2px; bottom: -3px;
+  height: 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'><path d='M2,5 Q 50,0 100,4 T 198,3' stroke='%23B8923A' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: .85;
+}
+
+.subtitle, p.subtitle {
+  font-family: $font-family-serif;
+  font-size: 21px;
+  line-height: 1.55;
+  color: $ink-2;
+  font-weight: 400;
+  margin: 0 0 32px;
+  max-width: 720px;
+}
+
+h2 {
+  font-size: 30px !important;
+  margin-top: 48px !important;
+  letter-spacing: -.012em;
+}
+h3 {
+  font-family: $font-family-sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  margin-top: 28px !important;
+}
+
+blockquote {
+  border-left: 2px solid $gold;
+  padding: 6px 18px !important;
+  font-style: italic;
+  color: $ink-2;
+  font-size: 19px;
+  background: $paper-2;
+}
+
+// Figures
+figure {
+  margin: 36px 0;
+  figcaption, .figure-caption, p.caption {
+    font-family: $font-family-sans-serif;
+    font-size: 13.5px !important;
+    line-height: 1.55;
+    color: $ink-2 !important;
+    padding: 12px 14px;
+    background: $paper-2;
+    border-top: 1px solid $rule-soft;
+  }
+}
+
+// Callouts — Quarto-native, reskinned
+div.callout {
+  border-left: 0 !important;
+  border: 1px dashed $rule !important;
+  border-radius: 4px !important;
+  background: $paper-2 !important;
+  margin: 24px 0;
+  .callout-header {
+    background: transparent !important;
+    border-bottom: 0 !important;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+  }
+  &.callout-note     { border-color: rgba(44,91,168,.35) !important;  background: rgba(44,91,168,.04) !important; }
+  &.callout-tip      { border-color: rgba(94,124,75,.35) !important;  background: rgba(94,124,75,.04) !important; }
+  &.callout-warning  { border-color: rgba(184,146,58,.35) !important; background: rgba(184,146,58,.06) !important; }
+  &.callout-important{ border-color: rgba(178,84,60,.35) !important;  background: rgba(178,84,60,.04) !important; }
+}
+
+// Equation block
+.math.display {
+  background: $paper-2;
+  border-left: 2px solid $accent;
+  padding: 14px 18px;
+  margin: 22px 0;
+}
+
+// Inline highlight class
+.hl, mark {
+  background-image: linear-gradient(transparent 60%, rgba(184,146,58,0.30) 60%);
+  padding: 0 2px;
+  background-color: transparent;
+}
+
+// Hand annotation utility
+.hand {
+  font-family: "Caveat", cursive;
+  font-size: 21px;
+  color: $gold;
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+// Code
+code, pre {
+  font-family: $font-family-monospace !important;
+}
+pre {
+  border-radius: 4px;
+  padding: 14px 16px !important;
+}
+
+// Table of Contents (Quarto right-side TOC)
+#TOC, .quarto-secondary-nav, nav#TOC {
+  font-family: $font-family-sans-serif;
+  font-size: 13px;
+  > ul, ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  a {
+    color: $ink-3 !important;
+    text-decoration: none !important;
+    padding: 6px 0;
+    display: block;
+    &:hover { color: $ink !important; }
+    &.active { color: $ink !important; font-weight: 500; }
+  }
+}
+
+// Article body width
+.page-columns main {
+  max-width: 720px;
+}
+
+// Code copy button — keep subtle
+.code-copy-button { color: $ink-mute !important; }
+
+// Footer
+.nav-footer, footer.footer {
+  background: $paper-2;
+  border-top: 1px solid $rule;
+  font-family: $font-family-sans-serif;
+  font-size: 13px;
+  color: $ink-3;
+}
+
+// Sticky topbar
+.navbar {
+  background: rgba(248,247,243,.86) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $rule-soft;
+}
+.navbar-brand {
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+}
+
+// Listing cards (for article index)
+.quarto-listing .listing-item, .quarto-post {
+  border-bottom: 1px solid $rule-soft;
+  padding: 22px 0;
+  .listing-title, h3.listing-title {
+    font-family: $font-family-serif !important;
+    font-weight: 500 !important;
+    font-size: 24px !important;
+    a { color: $ink; text-decoration: none; border-bottom: 0; }
+    a:hover { color: $accent; }
+  }
+  .listing-description {
+    font-family: $font-family-serif;
+    font-size: 16px;
+    color: $ink-2;
+    margin-top: 6px;
+  }
+  .listing-categories, .listing-date {
+    font-family: $font-family-monospace !important;
+    font-size: 11px !important;
+    color: $ink-mute !important;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+}

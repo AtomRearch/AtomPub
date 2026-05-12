@@ -1,0 +1,60 @@
+% AtomPub Light — PDF header (LaTeX)
+% Targets xelatex; loads warm paper colours + Fraunces/Inter font pairing so the
+% PDF and the website share a visual lineage.
+
+\usepackage{xcolor}
+\definecolor{atompub-paper}{HTML}{F8F7F3}
+\definecolor{atompub-ink}{HTML}{1F1E1B}
+\definecolor{atompub-ink-2}{HTML}{3B3A35}
+\definecolor{atompub-rule}{HTML}{DAD6CB}
+\definecolor{atompub-accent}{HTML}{2C5BA8}
+\definecolor{atompub-gold}{HTML}{B8923A}
+
+% Paper-tone page background
+\usepackage{pagecolor}
+\pagecolor{atompub-paper}
+\color{atompub-ink}
+
+% Titles & section headings
+\usepackage{titling}
+\pretitle{\begin{flushleft}\fontfamily{frc}\selectfont\Huge\itshape}
+\posttitle{\par\end{flushleft}\vspace{1em}}
+\preauthor{\begin{flushleft}\normalsize}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}\small\color{atompub-ink-2}}
+\postdate{\end{flushleft}}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{atompub-ink}}
+  {\textcolor{atompub-gold}{\small\textsc{§\,\thesection}}}{0.8em}{#1}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{atompub-ink}}
+  {\thesubsection}{0.6em}{#1}
+
+% Page geometry — generous margins to match the web's 720px column feel
+\usepackage{ragged2e}
+\RaggedRight
+
+% Block quotes — gold rule like the web
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\color{atompub-ink-2}\itshape}
+
+% Hyperlinks already coloured via colorlinks: true in _extension.yml
+
+% Captions
+\usepackage[font={small,sf},labelfont={bf,color=atompub-ink},labelsep=period]{caption}
+
+% Drop-cap for first paragraph (use \lettrine{X}{est of word} in body when desired)
+\usepackage{lettrine}
+\renewcommand{\LettrineFontHook}{\color{atompub-accent}}
+
+% Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\footnotesize\color{atompub-ink-2}\textsc{AtomPub} · CC-BY 4.0}
+\fancyfoot[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{atompub-rule}\leaders\hrule height \footrulewidth\hfill}}

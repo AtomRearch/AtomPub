@@ -1,0 +1,15 @@
+---
+title: "Articles"
+subtitle: "Everything published in AtomPub, newest first."
+listing:
+  contents: "*.qmd"
+  type: default
+  sort:
+    - "date desc"
+  fields: [date, title, subtitle, author, categories, reading-time]
+  categories: true
+  feed: true
+format:
+  atompub-light-html:
+    toc: false
+---

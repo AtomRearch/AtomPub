@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="moat" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2C5BA8" stop-opacity=".22"></stop>
+      <stop offset="100%" stop-color="#2C5BA8" stop-opacity="0"></stop>
+    </linearGradient>
+    <pattern id="dot" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1F1E1B" opacity=".25"></circle>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#F8F7F3"></rect>
+  <rect x="180" y="80" width="840" height="470" fill="none" stroke="#DAD6CB" stroke-dasharray="6 8"></rect>
+  <g transform="translate(280,180)">
+    <text x="0" y="-30" font-family="Fraunces, Georgia, serif" font-size="20" font-style="italic" fill="#5C5A52">classic moat</text>
+    <rect x="0" y="0" width="180" height="220" fill="url(#dot)"></rect>
+    <rect x="0" y="0" width="180" height="220" fill="none" stroke="#1F1E1B" stroke-width="1.5"></rect>
+    <g fill="#2C5BA8" opacity=".7">
+      <ellipse cx="40" cy="50" rx="6" ry="9"></ellipse>
+      <ellipse cx="90" cy="120" rx="6" ry="9"></ellipse>
+      <ellipse cx="140" cy="80" rx="6" ry="9"></ellipse>
+      <ellipse cx="60" cy="170" rx="6" ry="9"></ellipse>
+      <ellipse cx="120" cy="200" rx="6" ry="9"></ellipse>
+    </g>
+    <text x="0" y="248" font-family="JetBrains Mono, monospace" font-size="11" fill="#8A8780" letter-spacing=".12em">SCARCE / ARTISANAL</text>
+  </g>
+  <g transform="translate(540,290)" stroke="#B8923A" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M 0 0 Q 60 -30 120 0"></path>
+    <path d="M 110 -8 L 122 1 L 112 9"></path>
+  </g>
+  <text x="600" y="270" font-family="Caveat, cursive" font-size="22" fill="#B8923A" text-anchor="middle">evaporating</text>
+  <g transform="translate(700,180)">
+    <text x="180" y="-30" font-family="Fraunces, Georgia, serif" font-size="20" font-style="italic" fill="#5C5A52" text-anchor="end">taste · the last moat</text>
+    <rect x="0" y="0" width="180" height="220" fill="url(#moat)"></rect>
+    <rect x="0" y="0" width="180" height="220" fill="none" stroke="#1F1E1B" stroke-width="1.5"></rect>
+    <circle cx="90" cy="110" r="36" fill="#B8923A" opacity=".18"></circle>
+    <circle cx="90" cy="110" r="22" fill="#B8923A"></circle>
+    <circle cx="90" cy="110" r="6" fill="#F8F7F3"></circle>
+    <text x="180" y="248" font-family="JetBrains Mono, monospace" font-size="11" fill="#8A8780" text-anchor="end" letter-spacing=".12em">CHOICE OF QUESTION</text>
+  </g>
+  <text x="600" y="92" font-family="Fraunces, Georgia, serif" font-size="34" fill="#1F1E1B" text-anchor="middle" font-weight="500">The Evaporating Moat</text>
+  <text x="600" y="120" font-family="Inter, sans-serif" font-size="14" fill="#8A8780" text-anchor="middle" letter-spacing=".18em">RETHINKING HUMAN COMPETITIVENESS · ATOMPUB · 2026</text>
+  <text x="200" y="600" font-family="JetBrains Mono, monospace" font-size="11" fill="#8A8780" letter-spacing=".1em">DOI 10.55881/atp-2026-0152</text>
+  <text x="1000" y="600" font-family="JetBrains Mono, monospace" font-size="11" fill="#8A8780" text-anchor="end" letter-spacing=".1em">© 2026 ATOMPUB</text>
+</svg>

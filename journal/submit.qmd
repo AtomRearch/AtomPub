@@ -1,0 +1,27 @@
+---
+title: "Submit"
+subtitle: "Single-author, distraction-free, bench-anchored. Five steps."
+format:
+  atompub-light-html:
+    toc: false
+---
+
+AtomPub is designed for the *super-individual* researcher: someone whose
+workflow already produces a `.qmd`, a dataset, and a benchmark anchor. Submission
+takes minutes, not weeks.
+
+## The five steps
+
+1. **Upload `.qmd` source** — your manuscript, with the AtomPub Light front-matter filled in.
+2. **Verify raw data** — drop your CSV/HDF5; AtomAgent walks the rows and flags anomalies in real time.
+3. **Anchor to MSEDsBench** — pick the cell (electrode chemistry × scale) your result lives in.
+4. **Declare conflicts** — co-authors, affiliations, funding sources.
+5. **Submit** — AtomAgent produces a 10-point verification report; a human editor reads it within 72 hours.
+
+::: {.callout-tip}
+**No methods boilerplate.** If your protocol is in the AtomPub protocol library,
+cite it by DOI and skip the section. Your reviewers will thank you.
+:::
+
+[Email your submission →](mailto:atomfeed@163.com){.atp-btn .atp-btn--accent}
+[Read the author guide →](about.qmd#editorial){.atp-btn}

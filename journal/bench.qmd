@@ -1,0 +1,20 @@
+---
+title: "MSEDsBench"
+subtitle: "A live, lab-versus-lab leaderboard for multiscale energy-density experiments."
+format:
+  atompub-light-html:
+    toc: false
+---
+
+::: {.callout-note}
+**This is a placeholder.** The full Bloomberg-terminal-style dashboard lives in
+the React prototype at [`/AtomPub.html#dashboard`](../AtomPub.html#dashboard).
+In the production journal, this page will mount the same view as a Quarto
+HTML extension. The data feed is unchanged.
+:::
+
+The MSEDsBench Index summarizes every verified energy-density submission to
+AtomPub since 2024. Every accepted article anchors to a specific cell of the
+bench; reviewers see the agent-verification trace alongside the manuscript.
+
+[Open the live dashboard →](../AtomPub.html#dashboard){.atp-btn .atp-btn--accent}

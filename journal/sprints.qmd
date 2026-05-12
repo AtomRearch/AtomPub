@@ -1,0 +1,24 @@
+---
+title: "Data Sprints"
+subtitle: "Quarterly, prize-backed campaigns where the community races against a public dataset."
+format:
+  atompub-light-html:
+    toc: false
+---
+
+## How it works
+
+1. We post a public dataset and a target metric (e.g. *Wh/kg at 1C, after 500 cycles, full-cell, pack-aware*).
+2. The community submits methods and results during an 8-week window.
+3. AtomAgent verifies every submission against the bench.
+4. The top three results receive prize money and a fast-tracked AtomPub paper.
+
+## Active sprints
+
+::: {.callout-warning}
+**This is a placeholder section** — once the journal site is live, this page will list active sprints with countdown timers and submission counts.
+:::
+
+## Methodology Protocols {#protocols}
+
+A versioned, citable protocol library. Cite the protocol; skip the methods boilerplate.

@@ -1,0 +1,4 @@
+# Robots — let everything in.
+User-agent: *
+Allow: /
+Sitemap: https://atomrearch.github.io/AtomPub/sitemap.xml
