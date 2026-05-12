@@ -20,18 +20,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install rsvg-convert (for SVG->PDF in Quarto)
-        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
 
-      - name: Install TinyTeX (for PDF render)
-        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: "1.5.57"
 
-      - name: Render the journal (HTML + PDF)
+      - name: Render the journal (HTML)
         working-directory: journal
         run: quarto render
 

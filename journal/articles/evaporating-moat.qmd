@@ -23,12 +23,12 @@ journal-name: "AtomPub · Thoughts"
 
 og-image: "/og/evaporating-moat.png"
 og-image-alt: "Graphical abstract of The Evaporating Moat — a TOC-style image rendered at 1200×630."
-pdf-url: "/articles/evaporating-moat.pdf"
+
 qmd-source: "https://github.com/AtomRearch/AtomPub/blob/main/journal/articles/evaporating-moat.qmd"
 
 format:
   atompub-light-html: default
-  atompub-light-pdf:  default
+
 ---
 
 We are entering a new era. The hardest question I ask myself, and one I cannot
