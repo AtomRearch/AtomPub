@@ -1,0 +1,148 @@
+---
+title: "OpenAI Settled an 80-Year Conjecture. Here's What I Think About Every Time I Run a Genetic Algorithm."
+subtitle: "On planar unit distance, quasicrystals, and why the geometric intuition baked into your structure search might be quietly wrong."
+description: "OpenAI's reasoning model overturned the Erdős 1946 planar unit distance conjecture. This is not directly about materials — but it is about something deeper: the geometric priors we embed in our search algorithms without realizing it."
+date: 2026-05-21
+reading-time: "8 min"
+category-label: "Op-Ed · Computation"
+categories: [cluster-physics, DFT, genetic-algorithm, AI, geometry]
+atompub-id: "AP-2026-unit-distance-intuition"
+canonical-url: "https://atomrearch.github.io/AtomPub/articles/unit-distance-intuition.html"
+
+author:
+  - name: Zhengqian Jin
+    initials: ZJ
+    affiliation: AtomRearch · XJTU EKL
+    orcid: 0009-0002-7513-3708
+
+twitter-creator: "@EKL_Batteries"
+twitter-site: "@atompub"
+journal-name: "AtomPub"
+
+qmd-source: "https://github.com/AtomRearch/AtomPub/blob/main/journal/articles/unit-distance-intuition.qmd"
+
+format:
+  atompub-light-html: default
+---
+
+Yesterday OpenAI announced something that has been rattling around in my head
+ever since: their internal reasoning model independently overturned a conjecture
+that Paul Erdős posed in 1946.
+
+The problem is deceptively simple. Put $n$ points on a plane. How many pairs
+of points can be at exactly unit distance from each other? For eighty years,
+the working answer was: *approximately what you get from a square grid*. The
+count grows no faster than $n^{1+o(1)}$. The grid, or something close to it,
+was assumed to be basically optimal.
+
+OpenAI's model found an infinite family of non-grid configurations where a
+fixed $\delta > 0$ exists such that the unit-distance count reaches
+$n^{1+\delta}$ — directly beating the grid-optimal consensus. The model was
+handed the problem statement and produced 125 pages of chain-of-thought
+reasoning. No human mathematician supplied half the proof.
+
+So. What does any of this have to do with batteries?
+
+## The obvious connection: 2D crystals
+
+In 2D materials, atoms sit on a plane. Nearest-neighbor bond lengths *are*
+unit distances. The classic 2D lattices rank-ordered by coordination number:
+
+- **Square lattice** — coordination 4
+- **Triangular lattice** — coordination 6, densest planar packing
+- **Honeycomb (graphene)** — coordination 3, a sublattice of the triangular
+
+The unit-distance problem asks how many "nearest-neighbor bonds" a planar
+point set can have. The 80-year consensus was: periodic lattices are optimal.
+That consensus just broke.
+
+## The hard boundary
+
+Before drawing the wrong conclusion: real material geometry is *not* a pure
+optimization of planar point configurations. Carbon sp² hybridization is
+three-coordinate because of electron structure, not because we haven't found
+a better geometric arrangement. Thermodynamic stability, electronic constraints,
+and symmetry rules govern what configurations physically exist.
+
+OpenAI's new configuration family does not predict new materials. I want to be
+explicit about that.
+
+## But the quasicrystal parallel is real
+
+In 1982, Dan Shechtman found diffraction patterns in a rapidly-cooled Al–Mn alloy
+that showed fivefold rotational symmetry — impossible under the crystallographic
+dogma that all long-range ordered solids must be periodic. The field's response
+was initially rejection. Shechtman eventually won the 2011 Nobel Prize in Chemistry.
+
+Quasicrystals exist because the assumption "ordered = periodic" turned out to be
+wrong. The unit-distance result is the same category of lesson: our intuition about
+what *optimal planar arrangements look like* had a systematic blind spot for
+eighty years.
+
+## Here's where it gets personal
+
+My undergraduate research was on gas-phase metal clusters: magnetron
+sputtering to generate clusters in the gas phase, photoelectron spectroscopy for
+experimental signals, and genetic algorithms to search potential energy surfaces
+(PES) for lowest-energy configurations. You generate theoretical spectra from
+candidate geometries, compare against experiment, and when they match — that
+is your structure.
+
+In this workflow, **the geometry is what you are solving for, not what you
+assume at the start**.
+
+The case I keep coming back to is Ag₁₀ versus Au₁₀. Same group, same valence
+electron configuration, same nominal coordination chemistry. If structure were
+purely geometric, they should converge to the same lowest-energy configuration.
+They do not.
+
+Gold's relativistic effects — 6s orbital contraction, 5d orbital expansion,
+strong s–d hybridization — mean that Au clusters stay planar to significantly
+larger sizes than Ag clusters. Au₁₀ is essentially flat. Ag₁₀ has already
+transitioned to a 3D configuration. The genetic algorithm exploring the same
+geometric search space falls into different basins because the *shape of the
+potential energy surface* is different.
+
+**Geometry is downstream of electronic structure, not upstream.**
+
+## What the unit-distance breakthrough actually means for structure search
+
+The direct implication is limited. The unit-distance problem is a hard-constraint,
+potential-free, combinatorial geometry problem — categorically different from
+DFT global optimization on a potential energy surface.
+
+The indirect implication is methodological:
+
+Genetic algorithms for structure search depend on priors about what
+"reasonable configurations" look like — how the initial population is seeded,
+how crossover and mutation operators are designed. Many implementations carry
+an implicit preference for high-symmetry offspring. If mathematics has now
+demonstrated that low-symmetry, non-lattice configurations can be extremal in a
+precisely defined sense, that is a theoretical basis for revisiting those priors.
+
+To be fair, the cluster search community has been moving in this direction for
+years already: random seeding, basin-hopping, particle swarm optimization,
+machine-learning potentials for accelerated PES sampling. The unit-distance
+result is more *supporting argument for an existing trend* than paradigm shift.
+But it is a clean argument. And clean arguments are useful.
+
+## One sentence
+
+OpenAI showed that our intuition about optimal planar arrangements was wrong
+for eighty years. This result will not tell you what Au₁₂ looks like. But it
+is a useful reminder: [the geometric intuitions we bake into search
+algorithms are less reliable than we think]{.hl} — and that lesson holds
+whether you are doing pure mathematics or cluster physics.
+
+---
+
+*Note: OpenAI's proof has not yet undergone formal peer review. Princeton's
+Will Sawin has independently refined parts of the result, which is a
+good sign. Status should be monitored.*
+
+## References {.unnumbered}
+
+1. Erdős, P. On sets of distances of *n* points. *Amer. Math. Monthly* **53**, 248–250 (1946).
+2. Shechtman, D. *et al.* Metallic phase with long-range orientational order and no translational symmetry. *Phys. Rev. Lett.* **53**, 1951 (1984).
+3. Wang, L.-S. *et al.* Photoelectron spectroscopy of size-selected gold cluster anions. *Phys. Rev. Lett.* **91**, 123401 (2003).
+4. OpenAI. *Planar Unit Distance Conjecture (internal reasoning trace)*. Preprint (2026).

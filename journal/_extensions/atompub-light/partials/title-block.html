@@ -3,7 +3,7 @@ $-- Renders the masthead: eyebrow chips, title, lede (subtitle), action chips, b
 <section class="atp-mast">
   <div class="atp-mast__eyebrow">
     $if(category-label)$<span class="pill">$category-label$</span>$endif$
-    $if(doi)$<span>Article $doi$</span><span style="color:#DAD6CB">·</span>$endif$
+    $if(atompub-id)$<span>$atompub-id$</span><span style="color:#DAD6CB">·</span>$endif$
     $if(reading-time)$<span>Reading time · $reading-time$</span><span style="color:#DAD6CB">·</span>$endif$
     <span>Open Access · CC-BY 4.0</span>
   </div>
@@ -15,7 +15,7 @@ $-- Renders the masthead: eyebrow chips, title, lede (subtitle), action chips, b
     $if(pdf-url)$<a class="atp-btn atp-btn--accent" href="$pdf-url$">↓ Download PDF</a>$endif$
     $if(qmd-source)$<a class="atp-btn" href="$qmd-source$">↓ .qmd source</a>$endif$
     $if(bib-url)$<a class="atp-btn" href="$bib-url$">↓ References (.bib)</a>$endif$
-    $if(doi)$<a class="atp-btn" href="https://doi.org/$doi$">Cite</a>$endif$
+    $if(atompub-id)$<a class="atp-btn" href="$canonical-url$" title="Cite as: $atompub-id$">Cite ↗</a>$endif$
   </div>
 
   <div class="atp-byline">

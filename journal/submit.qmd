@@ -1,27 +1,47 @@
 ---
 title: "Submit"
-subtitle: "Single-author, distraction-free, bench-anchored. Five steps."
+subtitle: "Got a `.qmd` and something worth saying? That's enough."
 format:
   atompub-light-html:
     toc: false
 ---
 
-AtomPub is designed for the *super-individual* researcher: someone whose
-workflow already produces a `.qmd`, a dataset, and a benchmark anchor. Submission
-takes minutes, not weeks.
+AtomPub is a curated academic blog that accepts contributions from researchers
+who don't have their own platform — or who want a second home for their work.
+There is no formal peer review. The editor reads every submission and responds
+within a week.
 
-## The five steps
+## What to submit
 
-1. **Upload `.qmd` source** — your manuscript, with the AtomPub Light front-matter filled in.
-2. **Verify raw data** — drop your CSV/HDF5; AtomAgent walks the rows and flags anomalies in real time.
-3. **Anchor to MSEDsBench** — pick the cell (electrode chemistry × scale) your result lives in.
-4. **Declare conflicts** — co-authors, affiliations, funding sources.
-5. **Submit** — AtomAgent produces a 10-point verification report; a human editor reads it within 72 hours.
+Any format that fits the AtomPub spirit: reading notes, op-eds, method write-ups,
+short data observations, commentary. Length is flexible. Figures welcome.
 
-::: {.callout-tip}
-**No methods boilerplate.** If your protocol is in the AtomPub protocol library,
-cite it by DOI and skip the section. Your reviewers will thank you.
+The one technical requirement: write your piece as a `.qmd` file using the
+[AtomPub Light template](https://github.com/AtomRearch/AtomPub/blob/main/journal/_extensions/atompub-light/template.qmd).
+Every article gets a stable `AP-YYYY-slug` citation ID and a permanent URL.
+
+## Two ways to submit
+
+**Option A — GitHub PR (preferred)**
+
+```bash
+# 1. Fork https://github.com/AtomRearch/AtomPub
+# 2. Drop your .qmd into journal/articles/your-slug.qmd
+# 3. Open a pull request — title: "Submission: Your Article Title"
+```
+
+Include a `references.bib` and an OG image (`assets/og/your-slug.png`, 1200×630)
+if you have them. Both are optional.
+
+**Option B — Email**
+
+Send your `.qmd` (plus any bib/image) to [atomfeed@163.com](mailto:atomfeed@163.com)
+with subject line `AtomPub submission: Your Title`.
+
+::: {.callout-note}
+**No MSEDsBench anchor required.** No data-verification pipeline.
+Just good writing and honest provenance.
 :::
 
-[Email your submission →](mailto:atomfeed@163.com){.atp-btn .atp-btn--accent}
-[Read the author guide →](about.qmd#editorial){.atp-btn}
+[Open a pull request →](https://github.com/AtomRearch/AtomPub/compare){.atp-btn .atp-btn--accent}
+[Email your submission →](mailto:atomfeed@163.com){.atp-btn}

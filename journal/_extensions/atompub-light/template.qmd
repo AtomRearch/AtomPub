@@ -8,8 +8,8 @@ accepted:  2026-04-26
 reading-time: "8 min"
 category-label: "Thoughts · Op-Ed"
 categories: [autonomous-research, ai, taste]
-doi: "10.55881/atp-2026-XXXX"
-canonical-url: "https://atompub.example/articles/your-slug.html"
+atompub-id: "AP-YYYY-your-slug"
+canonical-url: "https://atomrearch.github.io/AtomPub/articles/your-slug.html"
 
 author:
   - name: Your Name

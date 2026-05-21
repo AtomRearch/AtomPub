@@ -8,7 +8,7 @@ accepted:  2026-04-26
 reading-time: "8 min"
 category-label: "Thoughts · Op-Ed"
 categories: [thoughts, autonomous-research, ai, taste]
-doi: "10.55881/atp-2026-0152"
+atompub-id: "AP-2026-evaporating-moat"
 canonical-url: "https://atomrearch.github.io/AtomPub/articles/evaporating-moat.html"
 
 author:
@@ -141,6 +141,6 @@ fix the packaging.
 ## References {.unnumbered}
 
 1. Polanyi, M. *The Tacit Dimension*. Routledge (1966).
-2. AtomRearch Consortium. *Autonomous Research Ecosystems · A Reference Architecture*. AtomPub `10.55881/atp-2026-0102` (2026).
+2. AtomRearch Consortium. *Autonomous Research Ecosystems · A Reference Architecture*. AtomPub AP-2026-are-reference (2026).
 3. Liu, J. & Park, S. *Joule* **7**, 410 (2023).
 4. Internal observations · paper-bot logs 2022–2026, on file with the author.

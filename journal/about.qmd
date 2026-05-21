@@ -22,10 +22,13 @@ the benchmark anchor, and the social-media preview as a single artefact.
 ## Standards
 
 - **Open Access · CC-BY 4.0** — every article. No exceptions, no embargo.
-- **ISSN 3027-1188.**
-- **DOIs** — minted via Crossref at acceptance.
+- **Citation IDs** — every article gets a stable `AP-YYYY-slug` identifier derived from its publication year and URL slug (e.g. `AP-2026-evaporating-moat`). These IDs are permanent; cite them as you would a DOI.
 - **OG/Twitter cards** — every article ships with 1200×630 social preview metadata.
 - **Source** — every article's `.qmd` is on GitHub. Pull requests welcome.
+
+## What AtomPub is
+
+AtomPub is a curated academic blog that looks like a journal. It is edited by Zhengqian Jin and accepts contributions from peers. It is not affiliated with a publisher, does not run formal peer review, and does not mint Crossref DOIs. What it does offer: a clean, citable URL, a consistent visual identity, and a place to publish for researchers who do not have their own platform.
 
 ## Subscribe {#subscribe}
 
