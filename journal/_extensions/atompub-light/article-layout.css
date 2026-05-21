@@ -246,3 +246,34 @@ nav.navbar, .quarto-secondary-nav, header#quarto-header,
   .atp-nav { display: none; }
   .atp-foot__inner { grid-template-columns: 1fr 1fr; }
 }
+
+/* === Cite dropdown === */
+.atp-cite { display: inline-flex; position: relative; }
+.atp-cite > summary { list-style: none; cursor: pointer; }
+.atp-cite > summary::-webkit-details-marker { display: none; }
+.atp-cite[open] > summary { background: var(--atp-ink); color: var(--atp-paper); border-color: var(--atp-ink); }
+.atp-cite__box {
+  position: absolute;
+  top: 38px; left: 0;
+  background: var(--atp-paper);
+  border: 1px solid var(--atp-rule);
+  border-radius: 4px;
+  padding: 10px 14px;
+  min-width: 320px; max-width: 520px;
+  z-index: 200;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+.atp-cite__box code {
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-all;
+  display: block;
+  user-select: all;
+  background: none;
+  color: var(--atp-ink-2);
+}
+
+/* === Defensive: hide Quarto-injected ORCID badges and empty byline circles === */
+a.quarto-title-orcid, .orcid, img[src*="orcid"] { display: none !important; }
+.atp-byline__avatar:empty { display: none !important; }

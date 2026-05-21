@@ -20,7 +20,7 @@ author:
 
 twitter-creator: "@your_handle"
 twitter-site: "@atompub"
-journal-name: "AtomPub · Journal of Multiscale Energy Materials"
+journal-name: "AtomPub"
 
 og-image: "/og/your-slug.png"
 og-image-alt: "Graphical abstract — single focal point at safe-area center."

@@ -8,7 +8,8 @@ project:
 
 website:
   title: "AtomPub"
-  description: "Journal of Multiscale Energy Materials — Quarto-native, bench-anchored, open access."
+  description: "Independent academic publication. Op-eds, reading notes, method write-ups, and research observations."
+  favicon: "assets/logo.svg"
   site-url: "https://atomrearch.github.io/AtomPub"
   repo-url: "https://github.com/AtomRearch/AtomPub"
 

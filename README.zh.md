@@ -11,13 +11,13 @@
 
 ---
 
-AtomPub **看起来**像一本期刊，实质上是一个策划型学术博客——由 [Zhengqian Jin](https://jingshengluo.github.io)（西安交通大学 EKL 课题组）主编，接受同行投稿。
+AtomPub 是由 [Zhengqian Jin](https://jingshengluo.github.io)部署的独立学术平台，发表观点文章、阅读笔记、方法记录和短报。接受peers投稿。
 
-没有出版商，没有正式同行评审，没有延迟开放。每篇文章都有永久 URL 和稳定引用 ID（格式 `AP-YYYY-slug`），可以像预印本一样引用。
+每篇文章都有永久 URL 和稳定引用 ID（格式 `AP-YYYY-slug`）。
 
 ## 这里发什么
 
-| 类型 | 具体是什么 |
+| 类型 | 具体是什么，主打一个半灰色地带 |
 |---|---|
 | **观点文章** | 那些你宁愿写出来而不是憋着的判断 |
 | **阅读笔记** | 某篇论文值得比一条推文更多的对待 |
@@ -40,25 +40,8 @@ cp journal/_extensions/atompub-light/template.qmd journal/articles/your-slug.qmd
 
 **方式二：邮件**
 
-将 `.qmd` 发至 `atomfeed@163.com`，邮件主题：`AtomPub submission: 文章标题`。
+将 `.qmd`或者其他形式的文稿（word等) 发至 `atomfeed@163.com`，邮件主题：`AtomPub submission: 文章标题`。
 
-## 本地预览
-
-```bash
-# 需要 Quarto ≥ 1.4  →  https://quarto.org/docs/get-started/
-cd journal
-quarto preview      # 在 http://localhost:3434 实时预览
-```
-
-## 一键发布（仅限维护者）
-
-双击项目根目录下的 **`push-article.bat`** → 粘贴 `.qmd` 路径 → 完成。
-GitHub Actions 约 2 分钟后自动渲染上线。
-
-## 技术栈
-
-[Quarto](https://quarto.org) · 自定义 `atompub-light` 扩展 · GitHub Pages · GitHub Actions。
-扩展自动处理页眉、目录、OG/Twitter 元数据和署名行，你只需要写 `.qmd`。
 
 ## 许可证
 

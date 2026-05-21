@@ -35,8 +35,9 @@ if you have them. Both are optional.
 
 **Option B — Email**
 
-Send your `.qmd` (plus any bib/image) to [atomfeed@163.com](mailto:atomfeed@163.com)
-with subject line `AtomPub submission: Your Title`.
+Not familiar with `.qmd`? No problem — send your piece as plain text, Markdown,
+or a Word document to [atomfeed@163.com](mailto:atomfeed@163.com).
+We will handle the formatting on our end.
 
 ::: {.callout-note}
 **No MSEDsBench anchor required.** No data-verification pipeline.

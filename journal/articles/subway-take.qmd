@@ -1,7 +1,7 @@
 ---
-title: "The Subway Take: On the Structure of Paradigm-Shifting Research"
-subtitle: "What a viral interview format, a transit card, and the opening line of your next paper have in common."
-description: "High-impact science and a great Subway Take share the same architecture: one counter-intuitive proposition, extreme precision of articulation, an unmistakable visual anchor. A framework for generating paradigm-shifting research ideas in energy materials."
+title: "The Subway Take: Some Thoughts on Research Ideation"
+subtitle: "A short-form interview format and the opening paragraph of a high-impact paper have more in common than I expected."
+description: "Reflections on counter-intuitive research ideation in energy materials, prompted by SubwayTakes with Kareem Rahma — a short-form interview series filmed on the NYC subway."
 date: 2026-05-13
 reading-time: "6 min"
 category-label: "Op-Ed · Method"
@@ -25,12 +25,14 @@ format:
   atompub-light-html: default
 ---
 
-There is an American interview program called *Subway Takes*. Two people get on
-a subway car. One holds a transit card like a microphone. The premise is simple:
-you have one stop to say something controversial and defend it. The card goes
-back and forth. The train moves. You either land the take or you don't.
+*SubwayTakes with Kareem Rahma* is a short-form interview series filmed on the
+NYC subway. Rahma stops strangers — or occasionally invited guests — and asks
+them for their most controversial take on something, right there on the platform
+or the moving car. A MetroCard stands in for a microphone. The takes are brief,
+direct, and often genuinely surprising.
 
-I have been thinking about this format as a research design tool.
+I have been thinking about this format in the context of research ideation,
+for reasons I am not entirely sure are rigorous.
 
 ## The structural parallel
 
@@ -73,21 +75,18 @@ what if they are the mechanism?
 
 ## The one-sentence test
 
-Every research framework has a core claim. The Subway Take makes you state it
-in one sentence that a peer in your field can immediately engage with —
-agree, disagree, or push back. Not "we investigated X," not "our results
-suggest Y." Something like:
+There is a version of this for research: whether the core claim can be stated in
+one sentence that a peer in the field can immediately engage with — agree,
+disagree, push back. Something like:
 
 > *The protective SEI layer is not passive — it is an active material that can
 > be programmed from the electrolyte side.*
 
 That sentence can be argued. It makes a specific prediction. It implies an
-experiment. It will survive (or not) three minutes on a moving train.
-
-If you cannot reduce your research to a sentence at this level of specificity
-and arguability, it is worth asking whether you have found the claim yet, or
-whether you are still in the part of the project where you are collecting
-justification for a question you have not yet clearly posed.
+experiment. Whether the analogy to a subway take holds up under scrutiny is
+another question, but I find the exercise useful for checking whether I have
+actually landed on a claim yet, or whether I am still in the part of the
+project where I am collecting evidence for a question I have not clearly posed.
 
 ## The visual anchor
 
@@ -100,7 +99,7 @@ counter-intuitive claim visible before the reader encounters the evidence. It
 should be minimalist — one clear spatial or mechanistic relationship, rendered
 in a style that communicates "conceptual" rather than "data." The figure
 serves as a Schelling point: when people disagree about what the paper claims,
-you can point to it and say *that*.
+there is something concrete to point to.
 
 ## Systematic anomaly hunting
 
@@ -114,10 +113,4 @@ When a Subway Take-ready anomaly surfaces in the automated stream, the question
 is always the same: is this a measurement artifact, or is this the experiment
 that is quietly right about something the field has been quietly ignoring?
 
-The transit card is already in your hand. The train is moving.
-
-## References {.unnumbered}
-
-1. Yu, W. Reactive Electrochemical Interphases (REI) as Active Materials:
-   From Passive to Programmable Interfaces. *Acc. Mater. Res.* **7**, 220–222 (2026).
-2. Polanyi, M. *The Tacit Dimension*. Routledge (1966).
+The transit card is in someone's hand. The train is moving.

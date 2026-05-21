@@ -15,7 +15,7 @@ $-- Renders the masthead: eyebrow chips, title, lede (subtitle), action chips, b
     $if(pdf-url)$<a class="atp-btn atp-btn--accent" href="$pdf-url$">↓ Download PDF</a>$endif$
     $if(qmd-source)$<a class="atp-btn" href="$qmd-source$">↓ .qmd source</a>$endif$
     $if(bib-url)$<a class="atp-btn" href="$bib-url$">↓ References (.bib)</a>$endif$
-    $if(atompub-id)$<a class="atp-btn" href="$canonical-url$" title="Cite as: $atompub-id$">Cite ↗</a>$endif$
+    $if(atompub-id)$<details class="atp-cite"><summary class="atp-btn">Cite</summary><div class="atp-cite__box"><code>$for(author)$$author.name$$sep$; $endfor$ ($date$). $title$. AtomPub $atompub-id$. &lt;$canonical-url$&gt;</code></div></details>$endif$
   </div>
 
   <div class="atp-byline">

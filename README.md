@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>A journal-flavored academic blog for researchers who have something to say.</strong><br/>
+  <strong>A journal-styled academic writing platform — op-eds, reading notes, method write-ups, and research observations.</strong><br/>
   <a href="https://atomrearch.github.io/AtomPub/">atomrearch.github.io/AtomPub</a>
   &nbsp;·&nbsp;
   <a href="README.zh.md">中文版 →</a>
@@ -11,17 +11,17 @@
 
 ---
 
-AtomPub **looks** like a journal. It is a curated academic blog — edited by [Zhengqian Jin](https://jingshengluo.github.io) (XJTU, EKL), open to contributions from peers who don't have their own platform or just want a second home for their work.
+AtomPub is an independent academic publication edited by [Zhengqian Jin](https://jingshengluo.github.io). Contributions from peers are welcome.
 
-No publisher. No formal peer review. No embargo. Every article gets a permanent URL and a stable citation ID in the form `AP-YYYY-slug` — cite it like you would a preprint.
+Every article gets a permanent URL and a stable citation ID in the form `AP-YYYY-slug`.
 
 ## What lives here
 
 | Category | What it means in practice |
 |---|---|
-| **Op-ed** | The take you'd rather write than sit on |
+| **Op-ed** | The take worth writing down |
 | **Reading notes** | When a paper deserves more than a tweet |
-| **Method write-up** | The protocol you actually used, not the boilerplate |
+| **Method write-up** | The protocol actually used, not the boilerplate |
 | **Data note** | Preliminary results that shouldn't disappear into a lab notebook |
 
 ## How to contribute
@@ -32,7 +32,7 @@ No publisher. No formal peer review. No embargo. Every article gets a permanent 
 # 1. Fork https://github.com/AtomRearch/AtomPub
 # 2. Copy the template:
 cp journal/_extensions/atompub-light/template.qmd journal/articles/your-slug.qmd
-# 3. Write your piece. Set `atompub-id: AP-YYYY-your-slug` in the front-matter.
+# 3. Write the piece. Set `atompub-id: AP-YYYY-your-slug` in the front-matter.
 # 4. Open a PR titled: "Submission: Your Article Title"
 ```
 
@@ -40,7 +40,8 @@ Optionally include `references.bib` and an OG image at `journal/assets/og/your-s
 
 **Option B — Email**
 
-Send your `.qmd` to `atomfeed@163.com` · subject: `AtomPub submission: Your Title`.
+Send the manuscript in any format (`.qmd`, Word, plain text) to `atomfeed@163.com`.
+Subject: `AtomPub submission: Title`. Formatting will be handled on our end.
 
 ## Run locally
 

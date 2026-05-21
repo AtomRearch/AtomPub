@@ -1,7 +1,7 @@
 ---
 title: "AtomPub"
-subtitle: "*Journal of Multiscale Energy Materials* — Quarto-native, bench-anchored, open access."
-description: "An autonomous-research-friendly journal. Bench-anchored, open access, designed so the website, the PDF, and the social card share a single visual lineage."
+subtitle: "Independent academic publication — op-eds, reading notes, method write-ups, and research observations."
+description: "AtomPub publishes op-eds, reading notes, method write-ups, and research observations. Open access, every article with a stable citation ID."
 
 format:
   atompub-light-html:
