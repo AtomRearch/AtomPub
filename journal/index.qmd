@@ -3,6 +3,16 @@ title: "AtomPub"
 subtitle: "Independent academic publication — op-eds, reading notes, method write-ups, and research observations."
 description: "AtomPub publishes op-eds, reading notes, method write-ups, and research observations. Open access, every article with a stable citation ID."
 
+listing:
+  - id: listing-latest
+    contents:
+      - "articles/*.qmd"
+      - "!articles/index.qmd"
+    sort: "date desc"
+    max-items: 4
+    type: default
+    fields: [date, title, subtitle, author, categories, reading-time]
+
 format:
   atompub-light-html:
     toc: false
@@ -14,50 +24,39 @@ format:
 [Vol. 04 · 2026]{.pill} [Open Access · CC-BY 4.0]{}
 :::
 
-# A journal for [*autonomous research*]{} ecosystems.
+# Writing for [*people who do research*]{}.
 
-Where research is computable and programmable by a single command — what remains is the choice of question, the choice of dataset, and the choice of what counts as a good answer. AtomPub is built for that part.
+Op-eds, reading notes, method write-ups, and data observations — by researchers,
+for researchers. Every article gets a permanent URL and a stable citation ID.
 
 ::: {.atp-actions}
-[Read latest →](articles/index.qmd){.atp-btn .atp-btn--accent}
-[See the bench →](bench.qmd){.atp-btn}
-[Submit a paper →](submit.qmd){.atp-btn}
+[Browse all articles →](articles/index.qmd){.atp-btn .atp-btn--accent}
+[Submit a piece →](submit.qmd){.atp-btn}
+[About →](about.qmd){.atp-btn}
 :::
 :::
 
-::: {.callout-note}
-**Built differently.** Every AtomPub article ships from a single `.qmd` source. Website, PDF, and social card share one visual lineage. Every paper carries hand-curated TOC art and full Open Graph metadata — so a paper's reach is decided by its content, not its packaging.
-:::
-
-## Latest research
-
-```{=html}
-<div style="margin-top: 12px;">
-```
+## Latest
 
 ::: {#listing-latest}
 :::
 
-```{=html}
-</div>
-```
-
-## The pillars
+---
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4}
-### MSEDsBench
+### Contribute
 
-A live, lab-versus-lab leaderboard for multiscale energy-density experiments. Every submission anchors here. [See the dashboard →](bench.qmd)
+Write a piece and publish it here. GitHub PR or email welcome — no `.qmd` experience required. [How to submit →](submit.qmd)
 :::
 ::: {.g-col-12 .g-col-md-4}
-### Data Sprints
+### Open access
 
-Quarterly, prize-backed campaigns. We post a public dataset and a target metric; the community races. Winners get a fast-tracked AtomPub paper. [See sprints →](sprints.qmd)
+Every article is CC-BY 4.0. Every article gets a stable `AP-YYYY-slug` citation ID and a permanent URL — no paywall, no embargo. [About →](about.qmd)
 :::
 ::: {.g-col-12 .g-col-md-4}
-### Methodology Protocols
+### Full archive
 
-Versioned, citable Quarto protocols. Cite the protocol, not the methods boilerplate. [Browse protocols →](sprints.qmd#protocols)
+Browse the complete list of articles, filter by category. [All articles →](articles/index.qmd)
 :::
 :::
