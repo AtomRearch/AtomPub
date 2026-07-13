@@ -6,6 +6,8 @@ $-- Renders the masthead: eyebrow chips, title, lede (subtitle), action chips, b
     $if(atompub-id)$<span>$atompub-id$</span><span style="color:#DAD6CB">·</span>$endif$
     $if(reading-time)$<span>Reading time · $reading-time$</span><span style="color:#DAD6CB">·</span>$endif$
     <span>Open Access · CC-BY 4.0</span>
+    <span id="atp-reads-sep" style="color:#DAD6CB; display:none;">·</span>
+    <span id="atp-reads" style="display:none;"></span>
   </div>
 
   <h1 class="title">$title$</h1>

@@ -55,11 +55,16 @@
         async src="//gc.zgo.at/count.js"></script>
 <script>
 (function () {
-  // Read-count display: per-page number on articles, site total on the homepage.
-  var el = document.getElementById('atp-views');
-  if (!el) return;
+  // Read-count display. Articles: inline in the masthead eyebrow ("· N reads").
+  // Homepage: site total in the footer. Hidden entirely if the counter
+  // endpoint is unreachable or disabled.
+  var inline = document.getElementById('atp-reads');
+  var footer = document.getElementById('atp-views');
   var path = location.pathname;
-  var isHome = path === '/' || /\/(index\.html)?$/.test(path) && !/articles/.test(path);
+  var isHome = path === '/' || (/\/(index\.html)?$/.test(path) && !/articles/.test(path));
+  var el = inline || footer;
+  if (!el || (isHome && !footer)) return;
+  if (isHome) el = footer;
   var target = isHome ? 'TOTAL' : path;
   fetch('https://ekl.goatcounter.com/counter/' + target + '.json')
     .then(function (r) { return r.ok ? r.json() : null; })
@@ -67,6 +72,8 @@
       if (!d || !d.count) return;
       el.textContent = d.count.trim() + (isHome ? ' total reads' : ' reads');
       el.style.display = '';
+      var sep = document.getElementById('atp-reads-sep');
+      if (!isHome && el === inline && sep) sep.style.display = '';
     })
     .catch(function () { /* counter unavailable — stay hidden */ });
 })();
