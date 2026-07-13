@@ -56,6 +56,42 @@ quarto preview      # live-reload at http://localhost:3434
 Double-click **`push-article.bat`** at the repo root → paste the `.qmd` path → done.
 The article goes live in ~2 minutes via GitHub Actions.
 
+## Protected posts (password-gated)
+
+Add `protected: true` to any article's front matter and it ships as
+ciphertext: the publish workflow encrypts the rendered HTML with
+AES-256-GCM (PBKDF2-SHA256, 310k iterations) and readers decrypt it
+in-browser via WebCrypto after entering the access phrase. GitHub Pages
+only ever hosts the encrypted blob; the post is also scrubbed from
+`search.json` and RSS feeds.
+
+Setup (maintainer, once):
+
+```bash
+gh secret set ATOMPUB_PASSWORD -R AtomRearch/AtomPub
+```
+
+Per-post password: set `protect-password: "..."` in the front matter
+(beats the site-wide secret). One unlock per browser session covers all
+posts sharing the same phrase.
+
+Caveats — know what this is and isn't:
+
+- **Title, description, and date stay public** (listing pages, OG tags).
+  Keep them non-sensitive.
+- Anyone holding the phrase can share the decrypted content; a weak
+  phrase can be brute-forced offline. Use a long passphrase.
+- If `ATOMPUB_PASSWORD` is unset at build time, protected posts
+  **fail closed**: a placeholder is published, never plaintext.
+
+Local test:
+
+```bash
+cd journal && quarto render && cd ..
+python journal/tools/protect.py journal/_site --articles journal/articles --password "test"
+python -m http.server -d journal/_site 8642   # open /articles/<slug>.html
+```
+
 ## Repo layout
 
 ```

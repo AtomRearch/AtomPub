@@ -31,6 +31,13 @@ jobs:
         working-directory: journal
         run: quarto render
 
+      - name: Encrypt protected posts
+        run: |
+          pip install --quiet cryptography
+          python journal/tools/protect.py journal/_site \
+            --articles journal/articles \
+            --password "${{ secrets.ATOMPUB_PASSWORD }}"
+
       - name: Copy the React prototype into the site
         run: |
           mkdir -p journal/_site
