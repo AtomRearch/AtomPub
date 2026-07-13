@@ -1,0 +1,111 @@
+---
+title: "From Passive to Programmable: Reading Notes on Weilai Yu's REI Viewpoint"
+subtitle: "How one researcher's accumulated experimental intuition became a complete cognitive map for interface design — and what that process reveals about how breakthroughs actually form."
+description: "Reading notes on Weilai Yu's Accounts of Materials Research Viewpoint on reactive electrochemical interphases, with reflections from attending his lecture in person."
+date: 2026-04-09
+reading-time: "7 min"
+category-label: "Reading Notes · Interfaces"
+categories: [reading-notes, SEI, REI, electrochemistry, interfaces, LMB]
+atompub-id: "AP-2026-reading-notes-rei"
+canonical-url: "https://atomrearch.github.io/AtomPub/articles/reading-notes-rei.html"
+
+author:
+  - name: Zhengqian Jin
+    initials: ZJ
+    affiliation: AtomRearch · XJTU EKL
+    orcid: 0009-0002-7513-3708
+
+twitter-creator: "@EKL_Batteries"
+twitter-site: "@atompub"
+journal-name: "AtomPub"
+
+qmd-source: "https://github.com/AtomRearch/AtomPub/blob/main/journal/articles/reading-notes-rei.qmd"
+bibliography: reading-notes-rei.bib
+csl: https://www.zotero.org/styles/nature
+
+protected: false   # 建议公开：读书笔记，无未发表 IP
+format:
+  atompub-light-html: default
+---
+
+Today I attended Professor Weilai Yu's lecture in person, then came home and
+reread his recently published Viewpoint in *Accounts of Materials Research*
+[@yuReactiveElectrochemicalInterphases2026]. The resonance between the two
+experiences — the live talk and the written text — was unusually strong, and
+I want to try to articulate why.
+
+## The paper, in one sentence
+
+Yu argues that the solid-electrolyte interphase (SEI) is not a passive
+protective layer but an *active material* — one that can and should be designed
+for programmable reactivity. He calls this reframing the Reactive Electrochemical
+Interphase (REI).
+
+This is not a small semantic shift. Calling the SEI "passive" implicitly frames
+interface engineering as a containment problem: how do we prevent the interphase
+from doing damage? Calling it "active" reframes the problem entirely: how do we
+*program* the interphase to do work?
+
+## Why the lecture landed differently than the paper
+
+Reading a Viewpoint article is a one-pass experience. The author has already
+done the work of linearizing a nonlinear body of knowledge into a sequence of
+claims. You follow the argument.
+
+A lecture is something else. What Yu showed us — almost involuntarily, in the
+way he paused on certain figures, in the questions he turned back on the
+audience — was the *shape of the underlying epistemic structure* before it was
+linearized. You could see where the certainty lived and where it didn't.
+
+The Viewpoint is a milestone summary. The lecture was the process of arriving
+at the milestone, made briefly visible.
+
+::: {.callout-note}
+**A pattern worth noting.** Major cognitive leaps in materials science often
+accumulate quietly: a series of seemingly modest results, each individually
+publishable but not obviously connected, until a critical mass is reached and
+someone draws the map. Yu's Viewpoint is that map. The experimental scaffolding
+behind it was assembled over years; the synthesis happened fast.
+:::
+
+## Three questions from the Q&A
+
+The Q&A surfaced the three threads I find most generative for my own work:
+
+**1. The dissolution transition layer and macroscopic SEI structure.**
+How does the composition of the semi-soluble transition layer near the REI
+influence the formation and spatial evolution of classical SEI structural
+models — the mosaic model, the multilayer model? The REI framing implies these
+models are not fixed archetypes but outputs of a dynamic process. The question
+is: what are the inputs?
+
+**2. Electrochemical mapping of 2D structural nucleation.**
+Can we read the 2D structural evolution of a Cu-SEI interface back out of
+nucleation patterns in potentiostatic chronoamperometry? The I–t curve as a
+spatially encoded signal, not just a kinetic summary. This connects directly to
+my own work on deposition behavior and seems underexplored.
+
+**3. Closed-loop theory–experiment verification.**
+Yu uses DFT to reveal electrolyte decomposition pathways. The question is how
+to close the loop: what other characterization techniques would form a rigorous
+cross-validation system? The answer probably depends on which decomposition
+pathway you're targeting, but the framework for answering it is worth building
+explicitly.
+
+## Two adjustments to my own practice
+
+This exchange sharpened two habits I want to hold myself to:
+
+**Show up.** High-level academic exchange is the fastest way to compress years
+of experimental intuition into a few hours of conversation. The opportunity cost
+of missing a lecture like this is not recoverable.
+
+**Ask better questions.** The Q&A is not a formality. A well-constructed
+question advances the topic; a careless one wastes everyone's time. I want to
+hold myself to the standard of asking questions that would earn a place in the
+paper if the paper were being written after the lecture.
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

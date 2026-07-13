@@ -51,7 +51,11 @@ def parse_front_matter(qmd_path: Path) -> dict:
     for line in m.group(1).splitlines():
         kv = re.match(r"^(protected|protect-password|title)\s*:\s*(.+?)\s*$", line)
         if kv:
-            fm[kv.group(1)] = kv.group(2).strip().strip("\"'")
+            key, value = kv.group(1), kv.group(2).strip()
+            if key in ("protected", "protect-password"):
+                # strip inline YAML comments: `true  # note` -> `true`
+                value = re.sub(r"\s+#.*$", "", value).strip()
+            fm[key] = value.strip("\"'")
     return fm
 
 
