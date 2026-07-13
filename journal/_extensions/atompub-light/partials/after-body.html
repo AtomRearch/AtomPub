@@ -45,6 +45,29 @@
   </div>
   <div class="atp-foot__legal">
     <span>© 2026 AtomRearch</span>
+    <span id="atp-views" style="display:none;"></span>
     <span>Rendered with Quarto · CC-BY 4.0</span>
   </div>
 </footer>
+
+<!-- GoatCounter analytics: privacy-friendly, no cookies -->
+<script data-goatcounter="https://ekl.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  // Read-count display: per-page number on articles, site total on the homepage.
+  var el = document.getElementById('atp-views');
+  if (!el) return;
+  var path = location.pathname;
+  var isHome = path === '/' || /\/(index\.html)?$/.test(path) && !/articles/.test(path);
+  var target = isHome ? 'TOTAL' : path;
+  fetch('https://ekl.goatcounter.com/counter/' + target + '.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.count) return;
+      el.textContent = d.count.trim() + (isHome ? ' total reads' : ' reads');
+      el.style.display = '';
+    })
+    .catch(function () { /* counter unavailable — stay hidden */ });
+})();
+</script>
